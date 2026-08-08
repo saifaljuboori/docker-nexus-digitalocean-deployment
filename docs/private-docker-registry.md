@@ -89,11 +89,15 @@ After completing the Nexus onboarding/EULA requirement, the registry endpoint be
 
 The Nexus Docker connector was configured to use HTTP for this lab environment.
 
-Because Docker normally expects HTTPS when communicating with registries, the Nexus registry address was added to Docker Desktop's `insecure-registries` configuration:
+Because Docker normally expects HTTPS when communicating with registries, the Nexus registry address was added to Docker Desktop's `insecure-registries` configuration.
 
-```text
-<droplet-public-ip>:8082
-```
+Open Docker Desktop → Settings → Docker Engine and add the following property to the existing JSON configuration:
+
+"insecure-registries": [
+  "<droplet-public-ip>:8082"
+]
+
+Click Apply & Restart after saving the configuration.
 
 Docker Desktop was then restarted.
 
@@ -108,8 +112,6 @@ The registry should appear under:
 ```text
 Insecure Registries:
 ```
-
-> This HTTP configuration is suitable for the controlled lab environment. A production private registry should use HTTPS/TLS to protect credentials and image traffic.
 
 ## Authenticate with the Private Registry
 
