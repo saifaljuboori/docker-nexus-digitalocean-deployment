@@ -92,11 +92,11 @@ The Nexus Docker connector was configured to use HTTP for this lab environment.
 Because Docker normally expects HTTPS when communicating with registries, the Nexus registry address was added to Docker Desktop's `insecure-registries` configuration.
 
 Open Docker Desktop → Settings → Docker Engine and add the following property to the existing JSON configuration:
-
+```json
 "insecure-registries": [
   "<droplet-public-ip>:8082"
 ]
-
+```
 Click Apply & Restart after saving the configuration.
 
 Docker Desktop was then restarted.
