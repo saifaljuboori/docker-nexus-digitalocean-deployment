@@ -31,3 +31,20 @@ Once the Droplet is available, this project covers:
 4. Running Nexus Repository Manager as a Docker container
 5. Verifying access to Nexus Repository Manager
 
+## Application Deployment
+
+The final deployment stage is documented in [`docs/application-deployment.md`](docs/application-deployment.md).
+
+This stage covers:
+
+1. Preparing the Node.js application for external deployment
+2. Updating frontend API requests to use relative paths
+3. Building the `my-app:1.1` Docker image
+4. Publishing the image to the private Nexus Docker registry
+5. Pulling the application image from Nexus on the DigitalOcean Droplet
+6. Configuring environment variables for the Docker Compose deployment
+7. Running the Node.js application, MongoDB, and Mongo Express as a Docker Compose stack
+8. Verifying the deployed application and Mongo Express from an external browser
+
+The application source code is maintained separately in the `docker-nodejs-mongodb` repository. This repository focuses on the infrastructure, Nexus registry, and deployment configuration.
+
